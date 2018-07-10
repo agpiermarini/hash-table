@@ -24,5 +24,12 @@ class HashTableTest < Minitest::Test
 
   def test_it_can_add_values_to_table
     table = HashTable.new
+    key = "Cobra Kai"
+    value = 100
+    index = table.calculate_index(key)
+
+    table.push(key,  value)
+
+    assert table.array[index].value, {key=>value}
   end
 end

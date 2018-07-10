@@ -12,7 +12,11 @@ class HashTable
     key.sum % size
   end
 
+  def push(key, value)
+    i = calculate_index(key)
+    array[i] = array[i].append({key => value})
+  end
+
   private
     attr_reader :size
-
 end

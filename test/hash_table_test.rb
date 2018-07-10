@@ -28,8 +28,19 @@ class HashTableTest < Minitest::Test
     value = 100
     index = table.calculate_index(key)
 
-    table.push(key,  value)
+    table.push(key, value)
 
     assert table.array[index].value, {key=>value}
   end
+
+  def test_it_can_get_values_by_key
+    table = HashTable.new
+    key = "Cobra Kai"
+    value = 100
+
+    table.push(key, value)
+
+    assert table.get(key), 100
+  end
+
 end

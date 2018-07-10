@@ -17,6 +17,11 @@ class HashTable
     array[i] = array[i].append({key => value})
   end
 
+  def get(key)
+    i = calculate_index(key)
+    array[i].find(key)
+  end
+
   private
     attr_reader :size
 end

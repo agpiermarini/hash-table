@@ -39,4 +39,14 @@ class LinkedListTest < Minitest::Test
     assert list.next_node.next_node, 6
     assert list.next_node.next_node.class, LinkedList
   end
+
+  def test_it_can_find_value
+    list = LinkedList.new
+
+    list.append({"Cobra Kai" => 95})
+    list.append({"Larusso" => 90})
+    list.append({"Miyagi" => 100})
+
+    assert list.find("Miyagi"), 100
+  end
 end

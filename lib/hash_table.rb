@@ -1,6 +1,11 @@
-require 'linked_list'
+require './lib/linked_list'
 
 class HashTable
-  def initialize()
+  attr_reader :size
+  attr_accessor :array
+
+  def initialize(size = 10)
+    @size = size
+    @array = Array.new(size, LinkedList.new)
   end
 end

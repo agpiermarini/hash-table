@@ -49,4 +49,14 @@ class LinkedListTest < Minitest::Test
 
     assert list.find("Miyagi"), 100
   end
+
+  def test_it_can_get_keys
+    list = LinkedList.new
+
+    list.append({"Cobra Kai" => 95})
+    list.append({"Larusso" => 90})
+    list.append({"Miyagi" => 100})
+
+    assert list.get_keys
+  end
 end

@@ -5,7 +5,7 @@ class HashTable
 
   def initialize(size = 10)
     @size = size
-    @array = Array.new(size, LinkedList.new)
+    @array = Array.new(size) { LinkedList.new }
   end
 
   def calculate_index(key)
@@ -14,7 +14,7 @@ class HashTable
 
   def push(key, value)
     i = calculate_index(key)
-    array[i] = array[i].append({key => value})
+    array[i].append({key => value})
   end
 
   def get(key)
@@ -22,6 +22,13 @@ class HashTable
     array[i].find(key)
   end
 
+  def print_keys
+    array.each_with_index do | element, index |
+      puts("#{index} -> #{element.get_keys}")
+    end
+  end
+
   private
     attr_reader :size
+
 end

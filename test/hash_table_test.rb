@@ -43,4 +43,13 @@ class HashTableTest < Minitest::Test
     assert table.get(key), 100
   end
 
+  def test_it_can_print_out_keys
+    table = HashTable.new
+
+    table.push("Cobra Kai", 90)
+    table.push("Miyagi", 100)
+    table.push("Larusso", 80)
+
+    assert table.print_keys, true
+  end
 end

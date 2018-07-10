@@ -24,5 +24,19 @@ class LinkedListTest < Minitest::Test
 
     assert list.value, 1
     assert list.next_node, 5
+    assert list.next_node.class, LinkedList
+  end
+
+  def test_it_can_append_more_than_one_value
+    list = LinkedList.new(1)
+    new_value = 5
+
+    list.append(5)
+    list.append(6)
+
+    assert list.value, 1
+    assert list.next_node, 5
+    assert list.next_node.next_node, 6
+    assert list.next_node.next_node.class, LinkedList
   end
 end

@@ -8,7 +8,7 @@ class LinkedList
   end
 
   def append(new_value, node = self)
-    return insert(new_value, node.next_node) if node.next_node
+    return append(new_value, node.next_node) if node.next_node
     node.next_node = LinkedList.new(new_value)
   end
 end

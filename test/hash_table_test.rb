@@ -49,6 +49,8 @@ class HashTableTest < Minitest::Test
     table.push("Cobra Kai", 90)
     table.push("Miyagi", 100)
     table.push("Larusso", 80)
+    table.push("Larusso", 80)
+    table.push("Larusso", 80)
 
     assert table.print_keys, true
   end

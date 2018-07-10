@@ -6,14 +6,9 @@ class LinkedList
     @next_node = nil
   end
 
-  def append(new_value, node = self)
-    if node.next_node
-      append(new_value, node.next_node)
-    elsif node.value
-      node.next_node = LinkedList.new(new_value)
-    else
-      node.value = new_value
-    end
+  def append(new_val, node = self)
+    return append(new_val, node.next_node) if node.next_node
+    node.value ? node.next_node = LinkedList.new(new_val) : node.value = new_val
   end
 
   def find(key, node = self)
@@ -27,6 +22,6 @@ class LinkedList
       get_keys(string += "#{node.value.keys.first}, ", node.next_node)
     else
       return string += node.value.keys.first
-    end  
+    end
   end
 end

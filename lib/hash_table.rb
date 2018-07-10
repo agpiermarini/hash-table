@@ -24,7 +24,7 @@ class HashTable
 
   def print_keys
     array.each_with_index do | element, index |
-      puts "#{index} -> #{element.get_keys}" 
+      puts "#{index} -> #{element.get_keys}"
     end
   end
 
